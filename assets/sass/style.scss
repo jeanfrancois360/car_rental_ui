@@ -20,6 +20,9 @@
 .blue {
   color: $blue;
 }
+.orange {
+  color: $orange;
+}
 
 // NAVBAR STYLES
 .navbar {
@@ -190,6 +193,7 @@
 .colored-divider {
   display: flex;
   justify-content: center;
+  margin-bottom: 40px;
 }
 .mini-divider-yellow {
   width: 196px;
@@ -206,15 +210,15 @@
   height: 8px;
   background-color: $green;
 }
-.header-btn-container button {
+.header-btn-container a {
   background-color: $white;
   border: none;
-  margin-top: 30px;
   width: 524px;
   font-size: 21px;
   font-weight: bold;
   color: $orange;
-  padding: 10px;
+  text-decoration: none;
+  padding: 10px 163px;
   border-radius: 8px;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
@@ -225,8 +229,7 @@
 
 // SIDE-BAR SECTION STYLES
 .side-bar {
-  border: 1px solid #c1c1c1;
-  width: 40%;
+  width: 36%;
   min-height: 300px;
 }
 // SIDE-BAR SECTION STYLES--END
@@ -308,12 +311,123 @@
   margin-top: -5px;
   color: $black;
 }
+.filter-btn-container {
+  display: flex;
+  justify-content: flex-end;
+}
+.filter-btn-container .active {
+  background: transparent;
+  border: 1px solid #ccc;
+  font-weight: bold;
+}
+.filter-label {
+  margin: auto 0px;
+  font-size: 18px;
+}
+.filter-btn {
+  background-color: $gray;
+  border: none;
+  width: 100px;
+  color: $black;
+  padding: 10px;
+  margin-left: 15px;
+  border-radius: 8px;
+  font-size: 18px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
 // FILTER SECTION--END
 
 // MAIN SECTION STYLES
 .main {
-  border: 1px solid #c1c1c1;
-  width: 60%;
+  width: 64%;
   min-height: 300px;
 }
+
+.car-container {
+  margin-top: 30px;
+  display: block;
+}
+.single-car {
+  display: flex;
+  width: 100%;
+  padding: 22px 0px;
+  border-top: 3px solid $gray;
+}
+.single-car-img {
+  width: 55%;
+}
+.single-car-img img {
+  width: 100%;
+}
+.single-car-content {
+  width: 65%;
+  margin-left: 10px;
+}
+.single-car-name {
+  color: $black;
+  font-size: 24px;
+}
+.single-car-name span {
+  font-weight: 400;
+}
 // MAIN SECTION STYLES--END
+
+// MODAL STYLES
+#popup {
+  position: fixed;
+  display: none;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.75);
+}
+#popup .popup-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  width: 700px;
+  height: 200px;
+  padding: 10px 50px;
+  background: #eee;
+  z-index: 100;
+  text-align: center;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+#popup a.close-popup {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 35px;
+  font-weight: 300;
+  text-decoration: none;
+  background-color: $orange;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  margin: auto;
+  color: $white;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+}
+
+#popup:target {
+  display: block;
+}
+// MODAL STYLES--END
